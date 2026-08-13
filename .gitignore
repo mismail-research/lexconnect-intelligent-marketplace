@@ -1,6 +1,5 @@
 # Miscellaneous
 *.class
-*.lock
 *.log
 *.pyc
 *.swp
@@ -41,6 +40,7 @@ analysis_benchmark.json
 .pub-preload-cache/
 .pub/
 build/
+node_modules/
 flutter_*.png
 linked_*.ds
 unlinked.ds
