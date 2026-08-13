@@ -9,6 +9,20 @@ test-email.js
 .buildlog/
 .history
 
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Firebase / service account credentials
+service-account.json
+firebase-adminsdk-*.json
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
 
 
 # Flutter repo-specific
