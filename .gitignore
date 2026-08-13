@@ -1,6 +1,8 @@
+
 # Miscellaneous
 *.class
 *.log
+*.iml
 *.pyc
 *.swp
 .buildlog/
