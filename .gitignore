@@ -5,6 +5,7 @@
 *.iml
 *.pyc
 *.swp
+test-email.js
 .buildlog/
 .history
 
