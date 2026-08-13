@@ -1,278 +1,434 @@
-====================================================================
- LEXCONNECT Intelligent Marketplace (LEXIUM)
- AI-Powered Lawyer-Client Connection Platform
-====================================================================
+# LEXCONNECT Intelligent Marketplace (LEXIUM)
 
-LexConnect is a Flutter-based cross-platform application that
-connects clients with verified, suitable lawyers through AI-powered
-guidance. The platform brings together two dedicated user
-experiences - a Client Module and a Lawyer Module - backed by a
-centralized administrative verification process, to create a
-transparent and efficient legal services ecosystem.
+### AI-Powered Lawyer-Client Connection Platform
 
+LexConnect is a Flutter-based cross-platform application that connects clients with verified and suitable lawyers through AI-powered guidance. The platform provides two dedicated user experiences — a **Client Module** and a **Lawyer Module** — supported by a centralized administrative verification process to create a transparent and efficient legal services ecosystem.
 
---------------------------------------------------------------------
-TABLE OF CONTENTS
---------------------------------------------------------------------
-1. Overview
-2. Key Objectives
-3. Features
-   3.1 Lawyer Module
-   3.2 Client Module
-4. Application Flow
-5. Tech Stack
-6. Architecture
-7. Getting Started
-8. Project Structure
-9. Future Improvements
+---
 
+## Table of Contents
 
---------------------------------------------------------------------
-1. OVERVIEW
---------------------------------------------------------------------
-LexConnect solves a common problem: clients struggle to find the
-right lawyer for their legal needs, and lawyers struggle to build a
-trustworthy online presence. The platform addresses this by
-combining:
+1. [Overview](#1-overview)
+2. [Key Objectives](#2-key-objectives)
+3. [Features](#3-features)
 
-  - Verified lawyer profiles
-    Every lawyer is manually reviewed and approved by an
-    administrator before they can accept clients.
+   * [3.1 Lawyer Module](#31-lawyer-module)
+   * [3.2 Client Module](#32-client-module)
+4. [Application Flow](#4-application-flow)
+5. [Tech Stack](#5-tech-stack)
+6. [Architecture](#6-architecture)
+7. [Getting Started](#7-getting-started)
+8. [Project Structure](#8-project-structure)
+9. [Future Improvements](#9-future-improvements)
 
-  - AI-powered legal guidance
-    An in-app chat assistant helps clients understand their legal
-    issue and get matched with the right category of lawyer.
+---
 
-  - Direct booking and communication
-    Clients can book appointments and, once accepted, communicate
-    directly with their lawyer.
+## 1. Overview
 
-  - Transparent ratings
-    Completed cases can be rated, helping future clients make
-    informed decisions.
+LexConnect addresses a common challenge in legal services: clients may struggle to identify the right lawyer for their legal needs, while lawyers may face difficulties establishing a trustworthy online presence.
 
+The platform addresses these challenges by combining:
 
---------------------------------------------------------------------
-2. KEY OBJECTIVES
---------------------------------------------------------------------
-  - Allow verified lawyers to build professional profiles.
-  - Help clients find the most suitable lawyer for their legal needs.
-  - Provide AI-powered legal guidance and recommendations.
-  - Enable direct communication between lawyers and clients.
-  - Ensure transparency through ratings and reviews.
-  - Create a fair and competitive environment for legal professionals.
+### Verified Lawyer Profiles
 
+Every lawyer is manually reviewed and approved by an administrator before gaining access to client appointments.
 
---------------------------------------------------------------------
-3. FEATURES
---------------------------------------------------------------------
+### AI-Powered Legal Guidance
 
-3.1 LAWYER MODULE
---------------------------------------------------------------------
+An in-app AI chat assistant helps clients understand their legal concerns and recommends suitable lawyer categories based on the described issue.
 
-Authentication
-  - Sign up / log in via Firebase Authentication.
+### Direct Booking and Communication
 
-Professional Profile Setup
-  - Business Name, Location, WhatsApp Number, Years of Experience,
-    Lawyer Category, High Court Qualification, Profile Picture,
-    Bar Council Number, and other professional details.
-  - Submitted details are automatically emailed to the administrator
-    for review.
+Clients can browse lawyer profiles, request appointments, and communicate directly with a lawyer after the appointment request has been accepted.
 
-Admin Verification
-  - Approved -> Lawyer gains full access to the Dashboard.
-  - Rejected -> Lawyer is redirected to a Rejected screen where
-    they can edit and resubmit their information.
+### Transparent Ratings
 
+After completion of a case, clients can rate their lawyer, allowing future clients to make more informed decisions.
+
+---
+
+## 2. Key Objectives
+
+* Allow verified lawyers to build professional profiles.
+* Help clients find suitable lawyers for their legal needs.
+* Provide AI-powered legal guidance and lawyer recommendations.
+* Enable direct communication between lawyers and clients.
+* Support appointment booking and management.
+* Provide transparency through ratings and reviews.
+* Create a fair and competitive environment for legal professionals.
+
+---
+
+## 3. Features
+
+### 3.1 Lawyer Module
+
+#### Authentication
+
+* Sign up and log in using Firebase Authentication.
+
+#### Professional Profile Setup
+
+Lawyers can provide professional information including:
+
+* Business name
+* Location
+* WhatsApp number
+* Years of experience
+* Lawyer category
+* High Court qualification
+* Profile picture
+* Bar Council number
+* Other professional details
+
+Submitted information is forwarded to the administrator for verification.
+
+#### Admin Verification
+
+* **Approved:** The lawyer gains access to the main dashboard.
+* **Rejected:** The lawyer is redirected to a rejection screen where submitted information can be edited and resubmitted.
+
+#### Dashboard
+
+* Profile picture
+* Appointment details
+* Logout functionality
+* Performance statistics
+* Accepted, rejected, and available appointment percentages
+* Incoming appointment requests from clients
+
+#### Statistics Screen
+
+* Today's appointments
+* Monthly progress charts
+* Completed cases
+* Pending cases
+* Rejected cases
+* Five-month performance overview
+
+#### Profile Management
+
+Lawyers can update:
+
+* Profile picture
+* Personal information
+* WhatsApp number
+* Professional information
+* Case-related information
+
+---
+
+### 3.2 Client Module
+
+#### Authentication
+
+* Sign up and log in using Firebase Authentication.
+
+#### Dashboard
+
+Clients can:
+
+* View appointment details
+* Browse lawyer categories
+* View lawyers within a selected category
+* Compare lawyer profiles
+
+#### Lawyer Details
+
+The lawyer details screen provides information including:
+
+* Name
+* Profile picture
+* Location
+* Years of experience
+* Cases won
+* Rating
+* About section
+* Education
+* Bar Council number
+* Current availability status
+
+#### Appointment Booking
+
+Clients can:
+
+* Select a preferred meeting method:
+
+  * At Client's Office
+  * At Lawyer's Office
+  * Online Meeting
+* Select appointment date and time.
+* Submit an appointment request.
+* Cancel an active request before the lawyer responds.
+
+The system allows one active appointment request per lawyer at a time.
+
+#### Appointment Notifications
+
+* Lawyers receive push notifications when new appointment requests are submitted.
+* Lawyers can accept or reject appointment requests.
+* Clients receive notifications regarding the lawyer's decision.
+
+#### AI Chat Assistant
+
+The AI assistant provides:
+
+* General legal guidance
+* Case-related analysis
+* Lawyer category recommendations
+* Answers to general questions about available legal services
+
+> **Note:** The AI assistant is intended to provide general informational guidance and should not be considered a substitute for professional legal advice.
+
+#### Communication
+
+Once a lawyer accepts an appointment, the lawyer's WhatsApp contact information becomes available to the client for direct communication.
+
+#### Case Completion and Ratings
+
+* Lawyers can mark an appointment as **Completed**.
+* Clients can rate the lawyer after case completion.
+* Ratings are displayed on the lawyer's details screen.
+
+#### Client Profile
+
+Clients can:
+
+* Update profile picture
+* Update name
+* Update WhatsApp number
+* View registered email address
+
+---
+
+## 4. Application Flow
+
+### 1. Splash Screen
+
+Introduces the application and performs initial background initialization.
+
+### 2. Role Selection
+
+The user selects one of two roles:
+
+* Lawyer
+* Client
+
+### 3. Authentication
+
+Users can log in or create an account using Firebase Authentication.
+
+### 4. Role-Based Routing
+
+#### Lawyer
+
+```text
+Professional Information Setup
+            ↓
+Verification Pending
+            ↓
+      Administrator
+       /          \
+   Approved      Rejected
+      ↓             ↓
+  Dashboard     Edit & Resubmit
+```
+
+#### Client
+
+```text
 Dashboard
-  - Profile picture, appointment details icon, logout button.
-  - Performance statistics: Accepted, Rejected, and Available
-    appointments (shown as percentages).
-  - List of incoming appointment requests from clients.
-
-Statistics Screen
-  - Today's appointments.
-  - Progress charts for the last five months (Completed, Pending,
-    Rejected cases).
-
-Profile Management
-  - Update profile picture, personal info, WhatsApp number,
-    professional details, and case information.
-
-
-3.2 CLIENT MODULE
---------------------------------------------------------------------
-
-Authentication
-  - Sign up / log in via Firebase Authentication.
-
-Dashboard
-  - Appointment details icon, logout button.
-  - Browse lawyer categories; selecting a category lists all
-    lawyers within it.
-  - Compare lawyer profile cards side by side.
-
-Lawyer Details Screen
-  - Name, profile picture, location, experience, cases won, rating,
-    about section, education, Bar Council number, and current
-    availability status.
-
+    ↓
+Browse Lawyer Categories
+    ↓
+View Lawyer Profiles
+    ↓
+Select Lawyer
+    ↓
 Book Appointment
-  - Choose a meeting preference:
-      * At Client's Office
-      * At Lawyer's Office
-      * Online Meeting
-  - Select appointment date and time.
-  - Confirm the request (one active request per lawyer at a time;
-    can be canceled before the lawyer responds).
+```
 
-Appointment Notifications
-  - Lawyer receives a push notification for new requests and can
-    accept/reject.
-  - Client receives a push notification with the lawyer's decision.
+### 5. Appointment Lifecycle
 
-AI Chat Assistant
-  - Provides legal guidance and case analysis.
-  - Recommends suitable lawyers based on the client's described
-    issue.
-  - Answers general questions about available legal services.
-
+```text
+Request
+   ↓
+Notification
+   ↓
+Accept / Reject
+   ↓
 Communication
-  - Once a lawyer accepts an appointment, their WhatsApp number
-    becomes visible to the client for direct communication.
+   ↓
+Case Completion
+   ↓
+Rating
+```
 
-Case Completion & Ratings
-  - Lawyer marks a case as "Completed" via the Appointment Details
-    screen.
-  - Client can then rate the lawyer; ratings are displayed publicly
-    on the Lawyer Details screen.
+---
 
-Client Profile Screen
-  - Update profile picture, name, WhatsApp number; view registered
-    email address.
+## 5. Tech Stack
 
+| Component            | Technology                       |
+| -------------------- | -------------------------------- |
+| Frontend             | Flutter                          |
+| Programming Language | Dart                             |
+| Platforms            | Android & iOS                    |
+| Authentication       | Firebase Authentication          |
+| Cloud Database       | Firebase / Cloud Database        |
+| Notifications        | Push Notifications               |
+| AI Assistant         | AI-powered conversational system |
+| Communication        | WhatsApp integration             |
 
---------------------------------------------------------------------
-4. APPLICATION FLOW
---------------------------------------------------------------------
-  1. Splash Screen
-     Introduces the app and handles background initialization.
+---
 
-  2. Role Selection Screen
-     User chooses Lawyer or Client.
+## 6. Architecture
 
-  3. Authentication
-     Login or Sign-Up via Firebase Authentication.
+### Role-Based Access Segmentation
 
-  4. Role-based routing:
-       Lawyer -> Professional Information Setup
-              -> Verification Pending
-              -> Dashboard (if approved)
-                 OR Rejected Screen (if rejected; editable and
-                 resubmittable)
+Immediately after the splash screen, the application separates the client and lawyer journeys using role-based routing. The selected role determines the user's profile setup, navigation flow, available functionality, and permissions.
 
-       Client -> Dashboard
-              -> Browse categories
-              -> View lawyer profiles
-              -> Book appointment
+### Secure Authentication
 
-  5. Appointment Lifecycle:
-       Request -> Notification -> Accept/Reject
-              -> (if accepted) Communication
-              -> Case Completion -> Rating
+User authentication is handled through Firebase Authentication. Each authenticated user receives a unique Firebase User ID (UID), which is used to associate application data with the corresponding account.
 
+### Per-User Data Isolation
 
---------------------------------------------------------------------
-5. TECH STACK
---------------------------------------------------------------------
-  Frontend         : Flutter (cross-platform: Android & iOS)
-  Authentication   : Firebase Authentication
-  Database         : Cloud database (per-user document/data structure)
-  Notifications    : Push notifications
-  AI Assistant     : AI-powered chat for legal guidance & lawyer
-                      recommendations
+User-specific information is organized using user-associated data structures in the cloud database. This helps separate individual user information and supports controlled access to application data.
 
+### Admin Verification Gateway
 
---------------------------------------------------------------------
-6. ARCHITECTURE
---------------------------------------------------------------------
-  - Role-based access segmentation
-    Immediately after the splash screen, the app separates the
-    client and lawyer journeys via a role tracker, which determines
-    profile setup, navigation, and permissions throughout the app.
+Lawyer accounts remain in a pending verification state until an administrator reviews the submitted professional credentials.
 
-  - Secure authentication
-    Credentials are validated locally, then encrypted and
-    transmitted to the authentication server, which issues a
-    unique user ID (UID) for each account.
+The administrator can:
 
-  - Per-user data isolation
-    Each user gets an isolated document/data node in the cloud
-    database, keeping verification records and personal data
-    separate from publicly accessible information.
+* Approve the lawyer profile.
+* Reject the submitted information.
+* Allow rejected profiles to be edited and resubmitted.
 
-  - Admin verification gateway
-    Lawyer accounts are held in a pending state until an
-    administrator manually approves or rejects submitted
-    credentials.
+---
 
+## 7. Getting Started
 
---------------------------------------------------------------------
-7. GETTING STARTED
---------------------------------------------------------------------
+### Prerequisites
 
-Prerequisites
-  - Flutter SDK (https://flutter.dev/docs/get-started/install)
-  - A Firebase project with Authentication enabled
-  - Android Studio / Xcode for platform-specific builds
+Before running the application, install:
 
-Installation
+* [Flutter SDK](https://flutter.dev/docs/get-started/install)
+* Android Studio for Android development
+* Xcode for iOS development (macOS required)
+* A configured Firebase project
+* Firebase Authentication enabled
+* Required Firebase services configured for the application
 
-  # Clone the repository
-  git clone <repository-url>
-  cd lexconnect
+### Installation
 
-  # Install dependencies
-  flutter pub get
+Clone the repository:
 
-  # Add your Firebase configuration files
-  # - android/app/google-services.json
-  # - ios/Runner/GoogleService-Info.plist
+```bash
+git clone https://github.com/<your-username>/lexconnect-intelligent-marketplace.git
+```
 
-  # Run the app
-  flutter run
+Navigate to the project directory:
 
+```bash
+cd lexconnect-intelligent-marketplace
+```
 
---------------------------------------------------------------------
-8. PROJECT STRUCTURE
---------------------------------------------------------------------
+Install Flutter dependencies:
 
-  lexconnect/
-  |-- lib/
-  |   |-- modules/
-  |   |   |-- lawyer/     (Lawyer auth, profile setup, dashboard, stats)
-  |   |   |-- client/     (Client auth, dashboard, booking, AI chat)
-  |   |-- shared/         (Shared widgets, models, and services)
-  |   |-- services/       (Firebase, notifications, AI chat integration)
-  |   |-- main.dart
-  |-- assets/
-  |-- android/
-  |-- ios/
-  |-- README.md
+```bash
+flutter pub get
+```
 
-  (Adjust to match your actual folder layout.)
+### Firebase Configuration
 
+Configure the Firebase project according to the application's requirements.
 
---------------------------------------------------------------------
-9. FUTURE IMPROVEMENTS
---------------------------------------------------------------------
-  - In-app video/audio consultations.
-  - Payment integration for consultation fees.
-  - Multi-language support for the AI chat assistant.
-  - Advanced lawyer search filters (fees, location radius).
-  - Analytics dashboard for administrators.
+Required platform-specific configuration files may include:
 
-====================================================================
- END OF README
-====================================================================
+```text
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+```
+
+**Do not commit private credentials, API keys, service-account files, or other sensitive configuration data to the repository.**
+
+### Run the Application
+
+```bash
+flutter run
+```
+
+---
+
+## 8. Project Structure
+
+The following structure represents the main organization of the application:
+
+```text
+lexconnect-intelligent-marketplace/
+│
+├── lib/
+│   ├── modules/
+│   │   ├── lawyer/
+│   │   │   ├── authentication/
+│   │   │   ├── profile/
+│   │   │   ├── dashboard/
+│   │   │   └── statistics/
+│   │   │
+│   │   └── client/
+│   │       ├── authentication/
+│   │       ├── dashboard/
+│   │       ├── lawyer_details/
+│   │       ├── booking/
+│   │       └── ai_chat/
+│   │
+│   ├── shared/
+│   │   ├── widgets/
+│   │   ├── models/
+│   │   └── services/
+│   │
+│   ├── services/
+│   │   ├── firebase/
+│   │   ├── notifications/
+│   │   └── ai/
+│   │
+│   └── main.dart
+│
+├── assets/
+│
+├── android/
+│
+├── ios/
+│
+├── README.md
+│
+└── pubspec.yaml
+```
+
+> **Note:** The structure above should be updated to reflect the actual project directory structure before final publication.
+
+---
+
+## 9. Future Improvements
+
+Potential future enhancements include:
+
+* In-app video and audio consultations.
+* Payment integration for consultation fees.
+* Multi-language support for the AI assistant.
+* Advanced lawyer search and filtering.
+* Location-radius-based lawyer search.
+* Consultation fee comparison.
+* Enhanced AI-based lawyer recommendation.
+* Administrator analytics dashboard.
+* Advanced appointment management.
+* Improved communication and consultation features.
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
+
+See the `LICENSE` file for details.
