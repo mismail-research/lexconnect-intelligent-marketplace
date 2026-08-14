@@ -5,20 +5,12 @@ import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       return web;
     }
+
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
@@ -26,18 +18,15 @@ class DefaultFirebaseOptions {
         return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+          'DefaultFirebaseOptions have not been configured for macOS.',
         );
       case TargetPlatform.windows:
         throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+          'DefaultFirebaseOptions have not been configured for Windows.',
         );
       case TargetPlatform.linux:
         throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+          'DefaultFirebaseOptions have not been configured for Linux.',
         );
       default:
         throw UnsupportedError(
@@ -47,7 +36,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCy69DKrtSA4xkjzajOP95orvHxLzwgY3U',
+    apiKey: 'YOUR_FIREBASE_WEB_API_KEY',
     appId: '1:300381764872:web:1897803db59989ed9540bd',
     messagingSenderId: '300381764872',
     projectId: 'lexbid-ai',
@@ -57,7 +46,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBbSqUCWuz_ojcmpI8u2OjmdAT7Dw5dflY',
+    apiKey: 'YOUR_FIREBASE_ANDROID_API_KEY',
     appId: '1:300381764872:android:253c639b3f02d6479540bd',
     messagingSenderId: '300381764872',
     projectId: 'lexbid-ai',
@@ -65,7 +54,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBHm3oyAv-kPnXpf6v_UPuPU9VQI-OfftA',
+    apiKey: 'YOUR_FIREBASE_IOS_API_KEY',
     appId: '1:300381764872:ios:3a36727041012bb69540bd',
     messagingSenderId: '300381764872',
     projectId: 'lexbid-ai',
